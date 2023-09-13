@@ -29,7 +29,12 @@ public class Product
         get { return price; }
         set { price = value; }
     }
-
+    /// <summary>
+    /// Ctor
+    /// </summary>
+    /// <param name="productId">Id of Product</param>
+    /// <param name="name">Name of product</param>
+    /// <param name="price">Product's price</param>
     public Product(int productId, string name, decimal price)
     {
         ProductId = productId;
@@ -38,9 +43,19 @@ public class Product
     }
 
 }
+/// <summary>
+/// Discount product
+/// </summary>
 public class DiscountProduct : Product
 {
     public decimal Discount { get; set; }
+    /// <summary>
+    /// Ctor
+    /// </summary>
+    /// <param name="productId"></param>
+    /// <param name="name"></param>
+    /// <param name="price"></param>
+    /// <param name="discount"></param>
     public DiscountProduct(int productId, string name, decimal price, decimal discount) : base(productId, name, price)
     {
         Discount = discount;

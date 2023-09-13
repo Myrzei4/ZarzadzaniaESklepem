@@ -14,17 +14,28 @@ public class DataService
         LoadProducts();
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="product"></param>
     public void AddProduct(DiscountProduct product)
     {
         products.Add(product);
         SaveProducts();
     }
 
+    /// <summary>
+    /// Returns list of Products
+    /// </summary>
+    /// <returns></returns>
     public List<DiscountProduct> GetProducts()
     {
         return products;
     }
 
+    /// <summary>
+    /// Load products from file
+    /// </summary>
     private void LoadProducts()
     {
         if (File.Exists("products.json"))

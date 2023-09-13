@@ -38,7 +38,13 @@ public class Customer
         get { return cart; }
         private set { cart = value; }
     }
-
+    /// <summary>
+    /// Ctor
+    /// </summary>
+    /// <param name="customerId">ID of Customer</param>
+    /// <param name="name">Customer's name</param>
+    /// <param name="password">Customer's password</param>
+    /// <param name="cart"></param>
     public Customer(int customerId, string name, string password, Cart cart)
     {
         CustomerId = customerId;
@@ -46,13 +52,20 @@ public class Customer
         Password = password;
         Cart = cart;
     }
-
+    /// <summary>
+    /// Loggin in
+    /// </summary>
+    /// <param name="enteredPassword">entered password</param>
+    /// <returns></returns>
     public bool LogIn(string enteredPassword)
     {
         UserService userService = new UserService();
         return Password == enteredPassword;
     }
 
+    /// <summary>
+    /// PlaceOrder
+    /// </summary>
     public void PlaceOrder()
     {
         Console.WriteLine($"Order from a client {Name}:");

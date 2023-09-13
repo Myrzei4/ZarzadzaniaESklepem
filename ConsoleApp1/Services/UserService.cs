@@ -38,11 +38,18 @@ namespace ZarzadzaniaESklepem.Services
            
         }
 
+        /// <summary>
+        /// Get customers list
+        /// </summary>
+        /// <returns></returns>
         public List<Customer> GetCustomers()
         {
             return customers;
         }
 
+        /// <summary>
+        /// Load customers from file
+        /// </summary>
         private void LoadCustomers()
         {
             if (File.Exists(customersFilePath))
@@ -60,6 +67,9 @@ namespace ZarzadzaniaESklepem.Services
             }
         }
 
+        /// <summary>
+        /// Save customers to file
+        /// </summary>
         public void SaveCustomers()
         {
             string json = JsonConvert.SerializeObject(customers, Formatting.Indented);

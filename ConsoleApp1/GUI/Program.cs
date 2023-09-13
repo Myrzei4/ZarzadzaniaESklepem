@@ -236,11 +236,10 @@ namespace ZarzadzaniaESklepem.App
             static Customer? FindCustomer(string username, string password)
             {
                 // Finding client by username and password
-
-
                 return userService.GetCustomers().FirstOrDefault(c => c.Name == username && c.LogIn(password));
                 
             }
+
 
             static void PlaceOrder(Customer customer)
             {
